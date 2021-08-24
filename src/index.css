@@ -22,7 +22,7 @@ body
     color: #cd8119;
     letter-spacing: 2.5px;
 }
-.navbar-btn
+.primary-btn-1
 {
     border: none;
     background-color: #cd8119;
@@ -30,6 +30,13 @@ body
     font-weight: bold;
     border-radius: 15px;
     color: white;
+    transition: 0.3s all;
+}
+.primary-btn-1:hover
+{
+    background-color: #e7972f;
+    position: relative;
+    transform: scale(1.2);
 }
 .terms-line
 {
@@ -45,11 +52,9 @@ body
 .background-overlay
 {
     background-color: rgba(0,0,0,0.7);
-    height: 650px;
     width: 75%;
     margin: auto;
-    border-bottom-left-radius: 30px;
-    border-top-left-radius: 30px;
+    border-radius:30px;
     color:white;
     border:5px solid #cd8119;
     overflow: auto;
@@ -69,6 +74,48 @@ body
 ::-webkit-scrollbar-thumb:hover {
     background: rgb(248, 161, 72);
 }
+
+.input-field-txt
+{
+    color: white;
+    border: 2px solid #cd8119;
+    border-radius: 20px;
+    width: 300px;
+    padding: 10px;
+    transition: 0.4s all;
+}
+.input-field-txt:focus
+{
+    outline: none;
+    width: 400px;
+}
+.hash-string-container
+{
+    height: 200px;
+    overflow-y: scroll;
+    border: 2px solid #cd8119;
+    padding: 8px;
+}
+.feature-boxes
+{
+    background-color: #cd8119;
+    width: 100px;
+    height: 100px;
+    margin: auto;
+    border-radius: 50%;
+}
+.roadmap
+{
+    background-color: #cd8119;
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    margin: auto;
+}
+.accordion-button::after
+{
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
+}
 /*~~~~~~~~~~ PROPERTIES ~~~~~~~~~~~*/
 .light-brown-clr
 {
@@ -78,4 +125,55 @@ body
 {
     height: 100vh;
 }
+.cursor-pointer
+{
+    cursor: pointer;
+}
+.bg-light-brown
+{
+    background: #cd8119 !important;
+}
+.w-r-75
+{
+    width: 75%;
+}
+.border-bottom
+{
+    border-bottom: 2px solid white;
+}
+.border-radius-25
+{
+    border-radius: 25px;
+}
 /*~~~~~~~~~~ PROPERTIES ~~~~~~~~~~~*/
+
+/*~~~~~~~~~~ MEDIA QUERIES ~~~~~~~~~~~*/
+@media screen and (max-width :600px){
+    .input-field-txt{
+        width: 80%;
+    }
+    .input-field-txt:focus{
+        width: 95%;
+    }
+    .roadmap
+    {
+        width: 60px;
+        height: 60px;
+    }
+    .background-overlay
+    {
+        width: 95%;
+    }
+}
+@media screen and (max-width :1000px){
+    .roadmap
+    {
+        width: 50px;
+        height: 50px;
+    }
+    .w-r-75
+    {
+        width: 100% !important;
+    }
+}
+/*~~~~~~~~~~ MEDIA QUERIES ~~~~~~~~~~~*/
