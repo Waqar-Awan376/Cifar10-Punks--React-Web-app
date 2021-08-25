@@ -1,4 +1,4 @@
-import React, {useRef} from "react";
+import React, {useEffect, useRef} from "react";
 import './App.css';
 import Header from "./components/header";
 import Footer from "./components/footer";
@@ -13,6 +13,7 @@ import Home from "./components/home";
 
 function App() {
     const metaMaskRef=useRef(null);
+
   return (
       <React.Fragment>
           <MetaMask ref={metaMaskRef}/>
@@ -23,7 +24,7 @@ function App() {
                       <Terms/>
                   </Route>
                   <Route path="/collection">
-                      <Collection/>
+                      <Collection metaRef={metaMaskRef}/>
                   </Route>
                   <Route path="/mint">
                       <Mint metaRef={metaMaskRef}/>

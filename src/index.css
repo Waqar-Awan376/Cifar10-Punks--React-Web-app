@@ -77,8 +77,8 @@ body
 
 .input-field-txt
 {
-    color: white;
-    border: 2px solid #cd8119;
+    color: black;
+    border: 3px solid #cd8119;
     border-radius: 20px;
     width: 300px;
     padding: 10px;
@@ -88,6 +88,21 @@ body
 {
     outline: none;
     width: 400px;
+}
+.wrong-input-field
+{
+    color: black !important;
+    background-color: #fab6b6;
+    border-radius: 20px !important;
+    width: 300px !important;
+    padding: 10px !important;
+    transition: 0.4s all !important;
+    border: 3px solid red !important;
+}
+.wrong-input-field:focus
+{
+    outline: none !important;
+    width: 400px !important;
 }
 .hash-string-container
 {
@@ -116,6 +131,33 @@ body
 {
     background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='%23fff'%3e%3cpath fill-rule='evenodd' d='M1.646 4.646a.5.5 0 0 1 .708 0L8 10.293l5.646-5.647a.5.5 0 0 1 .708.708l-6 6a.5.5 0 0 1-.708 0l-6-6a.5.5 0 0 1 0-.708z'/%3e%3c/svg%3e") !important;
 }
+.provenance-table-container
+{
+    height: 200px;
+    overflow-x: auto;
+    padding: 10px;
+}
+.provenance-table-container::-webkit-scrollbar {
+    display: none;
+}
+
+.provenance-table-container {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+.provenance-table
+{
+    width: 100%;
+}
+.provenance-table-rows
+{
+    font-size: 10px;
+}
+.provenance-table-cols
+{
+    border-right: 1px solid white;
+}
+
 /*~~~~~~~~~~ PROPERTIES ~~~~~~~~~~~*/
 .light-brown-clr
 {

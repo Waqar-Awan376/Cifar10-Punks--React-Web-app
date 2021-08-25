@@ -1,11 +1,10 @@
 import React, {useEffect, useState} from "react";
-import {useHistory} from "react-router-dom";
 import ProvenanceTable from "./provenanceTable";
 
 const Provenance=(props)=>{
-    const [proofRecord,setProofRecord]= useState(undefined);
-    const [concatHash,setConcatHash]= useState(undefined);
-    const [staringIndex,getStaringIndex]= useState(undefined);
+    const [proofRecord,setProofRecord]= useState();
+    const [concatHash,setConcatHash]= useState();
+    const [staringIndex,setStaringIndex]= useState();
 
     useEffect(()=>
     {
@@ -19,7 +18,7 @@ const Provenance=(props)=>{
         }).catch(err=>console.log(err));
         props.metaRef.current.getStartingIndex().then((value)=>
         {
-            getStaringIndex(value);
+            setStaringIndex(value);
         }).catch(err=>console.log(err));
         props.metaRef.current.getJsonFromTokenUri(1).then((value)=>
         {

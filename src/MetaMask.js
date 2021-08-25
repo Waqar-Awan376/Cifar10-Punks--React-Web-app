@@ -95,6 +95,9 @@ class MetaMask extends Component {
         // await this.state.contract.methods.safeMint(this.state.accounts.toString()).send({ from: this.state.accounts.toString(), value: val });
         // ~~~~~~~~~~ COMMENTED DUE TO ERROR ~~~~~~~~~~
     }
+    isValidAddress = async (address) => {
+        return this.state.web3.utils.isAddress(address);
+    }
 
     getMintPrice = async () => {
         var mintPrice = await this.state.contract.methods.getMintPrice().call();
