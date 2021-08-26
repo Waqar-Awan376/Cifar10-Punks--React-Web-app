@@ -89,7 +89,7 @@ const Mint=(props)=>
                     <div className="col-md-3"></div>
                     <div className="col-md-2">Amount</div>
                     <div className="col-md-2"><span
-                        className="badge bg-light text-dark cursor-pointer" onClick={decreaseAmount}><Dash/></span> &nbsp;<span>{amount}</span> &nbsp;<span className="badge bg-light text-dark cursor-pointer" onClick={increaseAmount}><Plus/></span></div>
+                        className="badge bg-light text-dark cursor-pointer border-radius-50per me-2" onClick={decreaseAmount}>-</span> &nbsp;<span>{amount}</span> &nbsp;<span className="badge bg-light text-dark cursor-pointer border-radius-50per ms-2" onClick={increaseAmount}>+</span></div>
                     <div className="col-md-2"><button className="primary-btn-1 m-2 m-md-0" onClick={setMintToMax}>Max</button></div>
                     <div className="col-md-3"></div>
                 </div>

@@ -2,7 +2,7 @@ import React from "react";
 const Faq=()=>
 {
     return(
-        <div className="my-5 p-3 background-overlay">
+        <div className="my-5 p-3 background-overlay height-500px">
             <h1 className="my-5 text-center">FAQ</h1>
             <div className="text-white m-auto w-75 my-4">
                 <div className="accordion" id="accordionExample">

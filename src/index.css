@@ -196,6 +196,14 @@ body
 {
     border-radius: 25px;
 }
+.border-radius-50per
+{
+    border-radius: 50% !important;
+}
+.height-500px
+{
+    height: 500px !important;
+}
 /*~~~~~~~~~~ PROPERTIES ~~~~~~~~~~~*/
 
 /*~~~~~~~~~~ MEDIA QUERIES ~~~~~~~~~~~*/
