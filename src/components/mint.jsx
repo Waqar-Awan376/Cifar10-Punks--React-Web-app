@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from "react";
-import {Dash,Plus} from "react-bootstrap-icons";
 import ProgressBar from 'react-bootstrap/ProgressBar';
 import Loader1 from "./loaders/loader1";
 
@@ -30,13 +29,10 @@ const Mint=(props)=>
         {
             props.metaRef.current.getMaxNumToken().then((maxToken)=>
             {
-                console.log(parseFloat(supply));
-                console.log(parseFloat(maxToken));
-                console.log(parseFloat(supply)/parseFloat(maxToken));
                 setProgress((parseFloat(supply)/parseFloat(maxToken))*100);
             })
         }).catch(err=>console.log(err));
-    },[amount]);
+    });
 
     const increaseAmount=(event)=>
     {

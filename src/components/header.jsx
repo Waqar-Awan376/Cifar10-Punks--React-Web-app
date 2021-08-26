@@ -58,7 +58,6 @@ const Header=(props)=>{
                         </NavLink>
                         <a
                             onClick={onClaimReward}
-
                             className="navigation-item mx-2 d-block d-lg-inline-block cursor-pointer">
                             Claim Rewards
                         </a>

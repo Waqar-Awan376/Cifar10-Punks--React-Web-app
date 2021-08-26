@@ -13,7 +13,7 @@ const Introduction=()=>
     {
         let imageLink=`Assets/introduction/${i}.png`;
         imageSection.push(
-            <div className="carousel-item text-center">
+            <div className="carousel-item text-center" key={i}>
                 <img src={imageLink} className="d-block m-auto width-200px" alt="..."/>
             </div>
         )

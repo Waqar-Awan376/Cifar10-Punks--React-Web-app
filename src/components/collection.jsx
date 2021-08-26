@@ -6,7 +6,6 @@ const Collection=(props)=>
     const [address,setAddress]= useState(undefined);
     const [isValidAddress,setIsValidAddress]=useState(true);
     const searchHandler=()=> {
-        let isMounted = true;
         props.metaRef.current.isValidAddress(address).then((isValid)=>
         {
             if(!isValid)
