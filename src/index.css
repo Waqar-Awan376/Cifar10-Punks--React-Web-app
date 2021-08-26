@@ -1,5 +1,6 @@
 body
 {
+    font-family: 'Electrolize', sans-serif !important;
     height: 100%;
     margin: 0;
     overflow-x: hidden;
@@ -174,6 +175,14 @@ body
 .bg-light-brown
 {
     background: #cd8119 !important;
+}
+.width-120px
+{
+    width: 120px;
+}
+.width-200px
+{
+    width: 200px;
 }
 .w-r-75
 {

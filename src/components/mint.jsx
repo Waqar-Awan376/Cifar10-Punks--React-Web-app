@@ -101,9 +101,9 @@ const Mint=(props)=>
                     <div className="col-md-3"></div>
                 </div>
                 <div>
-                    {mintingLoader===true ? <Loader1 width='100' height='100'/> :<button className="primary-btn-1 fs-4" onClick={executeMint}>Mint</button>}
+                    {mintingLoader===true ? <Loader1 width='100' height='100'/> :<button className="primary-btn-1 fs-5 width-200px" onClick={executeMint}>Mint</button>}
                 </div>
-                <div className="my-4 container row">
+                <div className="my-4 container row justify-content-center">
                     <div className="col-md-4"></div>
                     <div className="col-md-4"><div className="mt-4">
                         <ProgressBar now={progress} label={`${progress}%`} variant={'light-brown'} />

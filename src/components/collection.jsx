@@ -36,7 +36,7 @@ const Collection=(props)=>
                     <input type='text' className={"input-field-txt " + (isValidAddress ? '':'wrong-input-field')} onChange={addressHandler}/>
                 </div>
                 <div className="mb-5">
-                    <button type='text' className="primary-btn-1" onClick={searchHandler}>Search</button>
+                    <button type='text' className="primary-btn-1 width-120px" onClick={searchHandler}>Search</button>
                 </div>
                 <div className="container d-flex flex-wrap justify-content-center">
                     <SearchedCollection/>
