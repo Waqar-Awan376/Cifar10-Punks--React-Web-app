@@ -1,15 +1,34 @@
 import React, {useState} from "react";
 import SearchedCollection from "./searchedCollection";
-import {Col, Row,Toast} from "react-bootstrap";
 import ErrorToast from "../toast/errorToast";
+import Loader1 from "./loaders/loader1";
+
 
 const Collection=(props)=>
 {
     const [address,setAddress]= useState(undefined);
     const [isValidAddress,setIsValidAddress]=useState(true);
     const [show, setShow] = useState(false);
+    const [renderingCollection,setRenderingCollection]=useState(false);
+    const [collection,setCollection]=useState([]);
 
-    const searchHandler=()=> {
+    function getJsonFromID(token) {
+        return props.metaRef.current.getJsonFromTokenUri(token);
+    }
+
+    async function getJson(item) {
+        return await getJsonFromID(item);
+    }
+
+    async function processArray(array) {
+        let arrayOfCollection=[];
+        for (const item of array) {
+            arrayOfCollection.push(await getJson(item));
+        }
+        setCollection(arrayOfCollection);
+        setRenderingCollection(false);
+    }
+    const searchHandler= (children, func)=> {
         props.metaRef.current.isValidAddress(address).then((isValid)=>
         {
             if(!isValid)
@@ -26,8 +45,8 @@ const Collection=(props)=>
                 setIsValidAddress(true);
                 props.metaRef.current.getTokensOfAddress(address).then((tokens)=>
                 {
-
-                    console.log(tokens);
+                    setRenderingCollection(true);
+                    processArray(tokens);
                 }).catch(err=>console.log(err));
             }
         }).catch(err=>console.log(err));
@@ -57,7 +76,7 @@ const Collection=(props)=>
                     <button type='text' className="primary-btn-1 width-120px" onClick={searchHandler}>Search</button>
                 </div>
                 <div className="container d-flex flex-wrap justify-content-center">
-                    <SearchedCollection/>
+                    {renderingCollection?<Loader1/>:<SearchedCollection collection={collection} />}
                 </div>
             </div>
             &nbsp;

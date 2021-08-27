@@ -1,31 +1,16 @@
 import React from "react";
 
-const SearchedCollection=()=>
+const SearchedCollection=(props)=>
 {
     return(
         <React.Fragment>
-            <div className="m-3">
-                <img src="/Assets/introduction/0.png" alt="myImage" width='100'/>
-                <p>Cifar10 Punk #0069</p>
-                <p>Rank #2645</p>
-            </div>
-            <div className="m-3">
-                <img src="/Assets/introduction/1.png" alt="myImage" width='100'/>
-                <p>Cifar10 Punk #0069</p>
-                <p>Rank #2645</p>
-            </div>
-            <div className="m-3">
-                <img src="/Assets/introduction/2.png" alt="myImage" width='100'/>
-                <p>Cifar10 Punk #0069</p>
-                <p>Rank #2645</p>
-            </div>
-            <div className="m-3">
-                <img src="/Assets/introduction/3.png" alt="myImage" width='100'/>
-                <p>Cifar10 Punk #0069</p>
-                <p>Rank #2645</p>
-            </div>
+            {props.collection!==[]?(props.collection.map((item,index)=>(<div className="m-3" key={index}>
+                    <img src={item.image} alt="myImage" width='100'/>
+                    <p>{item.name}</p>
+                    <p>{item.description}</p>
+                </div>
+            ))):''}
         </React.Fragment>
-
     );
 }
 
