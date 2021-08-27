@@ -1,9 +1,10 @@
 import React, {useEffect, useState} from "react";
 import ProvenanceTable from "./provenanceTable";
+import ConcatString from '../ConcatString.json';
 
 const Provenance=(props)=>{
     const [proofRecord,setProofRecord]= useState();
-    const [concatHash,setConcatHash]= useState();
+    const [concatHash,setConcatHash]= useState(ConcatString[0]);
     const [staringIndex,setStaringIndex]= useState();
 
     useEffect(()=>
@@ -12,18 +13,11 @@ const Provenance=(props)=>{
         {
             setProofRecord(value);
         }).catch(err=>console.log(err));
-        props.metaRef.current.getConcatHash().then((value)=>
-        {
-            setConcatHash(value);
-        }).catch(err=>console.log(err));
         props.metaRef.current.getStartingIndex().then((value)=>
         {
             setStaringIndex(value);
         }).catch(err=>console.log(err));
-        props.metaRef.current.getJsonFromTokenUri(1).then((value)=>
-        {
-            console.log(value);
-        }).catch(err=>console.log(err));
+        console.log(concatHash);
     },[])
     return(
         <div>
@@ -43,7 +37,7 @@ const Provenance=(props)=>{
                     CONCATENATED HASH STRING:
                 </h5>
                 <div className="hash-string-container text-break">
-                    {concatHash}
+                    {concatHash["concatString"]}
                 </div>
                 <ProvenanceTable/>
             </div>
