@@ -89,11 +89,9 @@ class MetaMask extends Component {
     mint = async (amount) => { // TODO: Either pass total price or just amount and multiply
         var mintPrice = await window.metaMask.getMintPrice();
         var val = mintPrice * amount;
-        val = this.state.web3.utils.toWei(val, "ether");
+        val = this.state.web3.utils.toWei(val.toString(), "ether");
         console.log("minting...");
-        // ~~~~~~~~~~ COMMENTED DUE TO ERROR ~~~~~~~~~~
-        await this.state.contract.methods.safeMint(this.state.accounts.toString()).send({ from: this.state.accounts.toString(), value: val });
-        // ~~~~~~~~~~ COMMENTED DUE TO ERROR ~~~~~~~~~~
+        return await this.state.contract.methods.mintCifar10(amount).send({ from: this.state.accounts.toString(), value: val });
     }
     isValidAddress = async (address) => {
         return this.state.web3.utils.isAddress(address);

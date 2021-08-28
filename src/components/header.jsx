@@ -9,6 +9,8 @@ const Header=(props)=>{
     const [rewardValue,setRewardValue]=useState(0);
     const [curAccount,setCurAccount]=useState();
     const [isAccountLoaded,setIsAccountLoaded]=useState(false);
+    useEffect(()=>
+    {
         setTimeout(()=>{
             props.metaRef.current.getCurAccount().then((acc)=>
             {
@@ -16,7 +18,7 @@ const Header=(props)=>{
                 setIsAccountLoaded(true);
             }).catch(err=>console.log(err));
         },2000);
-
+    },[]);
     function onClaimReward(){
         setModalShow(true);
         props.metaRef.current.getRewardBalance().then(value=>

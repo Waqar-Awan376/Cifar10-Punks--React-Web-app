@@ -65,7 +65,7 @@ const Collection=(props)=>
     return(
         <div>
             &nbsp;
-            <ErrorToast show={show}/>
+            <ErrorToast show={show} msg="Wrong Address Added!"/>
             <div className="my-5 p-3 background-overlay text-center">
                 <h1 className="my-3">View Collection</h1>
                 <p className="mt-5">Enter your wallet ID</p>
