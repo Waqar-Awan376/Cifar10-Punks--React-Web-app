@@ -4,12 +4,12 @@ import Roadmap from "./Home Sections/roadmap";
 import Faq from "./Home Sections/faq";
 import Team from "./Home Sections/team";
 import Introduction from "./Home Sections/introduction";
-const Home=()=>
+const Home=(props)=>
 {
     return(
         <div>
             &nbsp;
-            <Introduction/>
+            <Introduction metaRef={props.metaRef}/>
             <Information/>
             <Roadmap/>
             <Faq/>

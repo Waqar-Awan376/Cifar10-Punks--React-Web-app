@@ -41,8 +41,6 @@ const Mint=(props)=>
                 setProgress( parseFloat((parseFloat(supply)/parseFloat(maxToken))*100).toFixed(2));
             })
         }).catch(err=>console.log(err));
-
-
     });
 
     const increaseAmount=(event)=>

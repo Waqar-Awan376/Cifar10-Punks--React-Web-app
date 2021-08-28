@@ -40,7 +40,7 @@ function App() {
                       <Provenance metaRef={metaMaskRef}/>
                   </Route>
                   <Route path="" exact>
-                      <Home/>
+                      <Home metaRef={metaMaskRef} />
                   </Route>
               </Switch>
           </Layout>
