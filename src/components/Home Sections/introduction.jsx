@@ -28,7 +28,7 @@ const Introduction=()=>
                         <p>Not only do ShitPunks look cool, the 5% marketplace reflection also provides extra incentive to use and show off your ShitPunk!</p>
                         <div className="d-flex justify-content-around pt-3">
                             <button className="primary-btn-1 width-120px" type="button">Mint</button>
-                            <button className="primary-btn-1 width-120px" type="button">Join us</button>
+                            <button className="primary-btn-1 width-120px" type="button"><a rel="noopener noreferrer" target="_blank" href={'https://google.com'} className="text-decoration-none text-white">Join us</a></button>
                         </div>
                     </div>
                     <div className="col-md-6 my-3">
