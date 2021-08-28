@@ -39,6 +39,12 @@ body
     position: relative;
     transform: scale(1.2);
 }
+.primary-btn-1:disabled
+{
+    background-color: #888888;
+    position: static;
+    transform: none;
+}
 .terms-line
 {
     text-decoration: none;
@@ -157,6 +163,17 @@ body
 .provenance-table-cols
 {
     border-right: 1px solid white;
+}
+.App {
+    display: flex;
+    justify-content: space-around;
+    font-family: sans-serif;
+    text-align: center;
+    padding-top: 40px;
+}
+
+.time {
+    font-size: 32px;
 }
 
 /*~~~~~~~~~~ PROPERTIES ~~~~~~~~~~~*/

@@ -3,6 +3,7 @@ import ProgressBar from 'react-bootstrap/ProgressBar';
 import Loader1 from "./loaders/loader1";
 import ErrorToast from "../toast/errorToast";
 import SuccessToast from "../toast/successToast";
+import Timer from "../Timer/timer";
 
 const Mint=(props)=>
 {
@@ -15,7 +16,9 @@ const Mint=(props)=>
     const [errorMessage,setErrorMessage]=useState("");
     const [successMessage,setSuccessMessage]=useState("");
     const [mintingLoader,setMintingLoader]=useState(false);
+    const [currentTime,setCurrentTime]=useState((new Date().getTime())/1000);
     const [progress,setProgress]=useState(0);
+    const [remainingTime,setRemainingTime]=useState((new Date("8/31/2021 02:22:00").getTime())/1000);
 
     useEffect(()=>
     {
@@ -38,6 +41,8 @@ const Mint=(props)=>
                 setProgress( parseFloat((parseFloat(supply)/parseFloat(maxToken))*100).toFixed(2));
             })
         }).catch(err=>console.log(err));
+
+
     });
 
     const increaseAmount=(event)=>
@@ -95,7 +100,9 @@ const Mint=(props)=>
             <SuccessToast show={showSuccess} msg={successMessage}/>
             <div className="my-5 p-3 background-overlay text-center">
                 <h1 className="my-3">Buy Cifar10 Punks</h1>
-
+                {remainingTime>currentTime?( <div>
+                    <Timer remainingTimeInSeconds={remainingTime}/>
+                </div>):''}
                 <p className="mt-5">{totalSupply} NFT's</p>
                 <div className="my-4 row">
                     <div className="col-md-3"></div>
@@ -120,7 +127,7 @@ const Mint=(props)=>
                     <div className="col-md-3"></div>
                 </div>
                 <div>
-                    {mintingLoader===true ? <Loader1 width='100' height='100'/> :totalSupply===0?<div><h4>We Are Officially Sold Out!</h4><a rel="noopener noreferrer" target="_blank" href={'https://opensea.io/'} className="text-decoration-none light-brown-clr">Visit OpenSea Collection</a></div>: <button className="primary-btn-1 fs-5 width-200px" onClick={executeMint}>Mint</button>}
+                    {mintingLoader===true ? <Loader1 width='100' height='100'/> :totalSupply===0?<div><h4>We Are Officially Sold Out!</h4><a rel="noopener noreferrer" target="_blank" href={'https://opensea.io/'} className="text-decoration-none light-brown-clr">Visit OpenSea Collection</a></div>: <button className="primary-btn-1 fs-5 width-200px" onClick={executeMint} disabled={remainingTime > currentTime} >Mint</button>}
                 </div>
                 <div className="my-4 row justify-content-center">
                     <div className="col-md-4"></div>
