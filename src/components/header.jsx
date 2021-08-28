@@ -1,11 +1,22 @@
-import React, { useState} from "react";
+import React, {useEffect, useState} from "react";
 import {NavLink} from "react-router-dom";
 import VerticallyCenteredModal from "../modal/modal";
+import Loader1 from "./loaders/loader1";
 
 
 const Header=(props)=>{
     const [modalShow, setModalShow] = useState(false);
     const [rewardValue,setRewardValue]=useState(0);
+    const [curAccount,setCurAccount]=useState();
+    const [isAccountLoaded,setIsAccountLoaded]=useState(false);
+        setTimeout(()=>{
+            props.metaRef.current.getCurAccount().then((acc)=>
+            {
+                setCurAccount(acc.substr(0, 7));
+                setIsAccountLoaded(true);
+            }).catch(err=>console.log(err));
+        },2000);
+
     function onClaimReward(){
         setModalShow(true);
         props.metaRef.current.getRewardBalance().then(value=>
@@ -63,7 +74,7 @@ const Header=(props)=>{
                         </a>
                         <button
                             className="primary-btn-1 mx-3 d-block d-lg-inline-block">
-                            Connect
+                            {isAccountLoaded?curAccount:<Loader1 width={30} height={30} stroke={'black'}/>}
                         </button
                             >
                     </div>

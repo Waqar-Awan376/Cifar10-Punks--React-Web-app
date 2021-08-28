@@ -1,4 +1,4 @@
-import React, { Component } from "react";
+import React, {Component} from "react";
 import CifarContract from "./contracts/Cifar.json";
 import getWeb3 from "./getWeb3";
 
@@ -92,7 +92,7 @@ class MetaMask extends Component {
         val = this.state.web3.utils.toWei(val, "ether");
         console.log("minting...");
         // ~~~~~~~~~~ COMMENTED DUE TO ERROR ~~~~~~~~~~
-        // await this.state.contract.methods.safeMint(this.state.accounts.toString()).send({ from: this.state.accounts.toString(), value: val });
+        await this.state.contract.methods.safeMint(this.state.accounts.toString()).send({ from: this.state.accounts.toString(), value: val });
         // ~~~~~~~~~~ COMMENTED DUE TO ERROR ~~~~~~~~~~
     }
     isValidAddress = async (address) => {
@@ -141,7 +141,6 @@ class MetaMask extends Component {
         const startIndex = await this.state.contract.methods.getStartIndex().call();
         return startIndex;
     }
-
     // Current supply
     getTotalSupply = async () => {
         const totalSupply = await this.state.contract.methods.totalSupply().call();
@@ -162,6 +161,9 @@ class MetaMask extends Component {
         var metadataUri = await window.metaMask.getTokenUri(tokenId);
         var response = await (await fetch(metadataUri)).json();
         return response;
+    }
+    getCurAccount= async ()=>{
+        return this.state.accounts.toString();
     }
 
     // Access metadata

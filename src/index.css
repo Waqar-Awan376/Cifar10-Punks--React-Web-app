@@ -209,6 +209,10 @@ body
     right: 10px;
     position: absolute;
 }
+.width-40perc
+{
+    width: 40% !important;
+}
 /*~~~~~~~~~~ PROPERTIES ~~~~~~~~~~~*/
 
 /*~~~~~~~~~~ MEDIA QUERIES ~~~~~~~~~~~*/

@@ -7,7 +7,7 @@ const Loader1=(props)=>
       <React.Fragment>
           <Loader
               type="Puff"
-              color="#cd8119"
+              color={(props.stroke)?'black':'#cd8119'}
               height={props.height}
               width={props.width}
           />

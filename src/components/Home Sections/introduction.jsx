@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 const Introduction=()=>
 {
@@ -27,8 +28,8 @@ const Introduction=()=>
                         <p>The Doge Pound is 10,000 art pieces carefully chosen by Professor Elon. A unique digital collection of diverse NFTs lying on Ethereum Blockchain. Each one is thoughtfully designed, specifically picked, and impeccably shaped. Join us on our adventure and have a good time. Having a Doge Token grants you creative and commercial rights, as well as inclusion in the gang.</p>
                         <p>Not only do ShitPunks look cool, the 5% marketplace reflection also provides extra incentive to use and show off your ShitPunk!</p>
                         <div className="d-flex justify-content-around pt-3">
-                            <button className="primary-btn-1 width-120px" type="button">Mint</button>
-                            <button className="primary-btn-1 width-120px" type="button"><a rel="noopener noreferrer" target="_blank" href={'https://google.com'} className="text-decoration-none text-white">Join us</a></button>
+                            <Link to='/mint' className="text-decoration-none text-white"><button className="primary-btn-1 width-120px" type="button">Mint</button></Link>
+                            <a rel="noopener noreferrer" target="_blank" href={'https://google.com'} className="text-decoration-none text-white"><button className="primary-btn-1 width-120px" type="button">Join us</button></a>
                         </div>
                     </div>
                     <div className="col-md-6 my-3">
