@@ -1,4 +1,5 @@
 import React from "react";
+import { CurrencyBitcoin,CashCoin,CartCheck,Coin } from 'react-bootstrap-icons';
 
 const Information=()=>
 {
@@ -10,27 +11,45 @@ const Information=()=>
           </div>
           <div className="d-flex flex-wrap justify-content-center my-5">
               <div className="text-center p-3">
+                  <a rel="noopener noreferrer" target="_blank" href={'https://google.com'} className="text-decoration-none text-white">
                   <div className="feature-boxes">
-
+                      <div className="h-100 w-100 d-flex flex-column align-items-center justify-content-center">
+                          <CurrencyBitcoin className="fs-1"/>
+                      </div>
                   </div>
+                  </a>
                   <h4 className="my-3">Feature 1</h4>
                   <p className="w-50 m-auto">During the mint, 5% of every mint fee was redistributed to existing ShitPunk holders.</p>
               </div>
               <div className="text-center p-3">
+                  <a rel="noopener noreferrer" target="_blank" href={'https://google.com'} className="text-decoration-none text-white">
                   <div className="feature-boxes">
-                  </div>
+                      <div className="h-100 w-100 d-flex flex-column align-items-center justify-content-center">
+                          <CashCoin className="fs-1"/>
+                      </div>
+                  </div></a>
                   <h4 className="my-3">Feature 1</h4>
                   <p className="w-50 m-auto">During the mint, 5% of every mint fee was redistributed to existing ShitPunk holders.</p>
               </div>
               <div className="text-center p-3">
-                  <div className="feature-boxes">
-                  </div>
+                  <a rel="noopener noreferrer" target="_blank" href={'https://google.com'} className="text-decoration-none text-white">
+                      <div className="feature-boxes">
+                        <div className="h-100 w-100 d-flex flex-column align-items-center justify-content-center">
+                            <CartCheck className="fs-1"/>
+                        </div>
+                    </div>
+                  </a>
                   <h4 className="my-3">Feature 1</h4>
                   <p className="w-50 m-auto">During the mint, 5% of every mint fee was redistributed to existing ShitPunk holders.</p>
               </div>
               <div className="text-center p-3">
+                  <a rel="noopener noreferrer" target="_blank" href={'https://google.com'} className="text-decoration-none text-white">
                   <div className="feature-boxes">
+                      <div className="h-100 w-100 d-flex flex-column align-items-center justify-content-center">
+                          <Coin className="fs-1"/>
+                      </div>
                   </div>
+                  </a>
                   <h4 className="my-3">Feature 1</h4>
                   <p className="w-50 m-auto">During the mint, 5% of every mint fee was redistributed to existing ShitPunk holders.</p>
               </div>

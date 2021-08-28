@@ -74,14 +74,14 @@ const Mint=(props)=>
                 <h1 className="my-3">Buy Cifar10 Punks</h1>
 
                 <p className="mt-5">{totalSupply} NFT's</p>
-                <div className="my-4 container row">
+                <div className="my-4 row">
                     <div className="col-md-3"></div>
                     <div className="col-md-2">ETH Balance</div>
                     <div className="col-md-2"></div>
                     <div className="col-md-2 light-brown-clr">{balance} ETH</div>
                     <div className="col-md-3"></div>
                 </div>
-                <div className="my-4 container row">
+                <div className="my-4 row">
                     <div className="col-md-3"></div>
                     <div className="col-md-2">Amount</div>
                     <div className="col-md-2"><span
@@ -89,7 +89,7 @@ const Mint=(props)=>
                     <div className="col-md-2"><button className="primary-btn-1 m-2 m-md-0" onClick={setMintToMax}>Max</button></div>
                     <div className="col-md-3"></div>
                 </div>
-                <div className="my-4 container row">
+                <div className="my-4 row">
                     <div className="col-md-3"></div>
                     <div className="col-md-2">Total Price</div>
                     <div className="col-md-2"></div>
@@ -99,7 +99,7 @@ const Mint=(props)=>
                 <div>
                     {mintingLoader===true ? <Loader1 width='100' height='100'/> :<button className="primary-btn-1 fs-5 width-200px" onClick={executeMint}>Mint</button>}
                 </div>
-                <div className="my-4 container row justify-content-center">
+                <div className="my-4 row justify-content-center">
                     <div className="col-md-4"></div>
                     <div className="col-md-4"><div className="mt-4">
                         <ProgressBar now={progress} label={`${progress}%`} variant={'light-brown'} />
