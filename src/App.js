@@ -24,7 +24,7 @@ function App() {
   return (
       <React.Fragment>
           <MetaMask ref={metaMaskRef}/>
-          <Header metaRef={metaMaskRef}/>
+          <Header metaRef={metaMaskRef} />
           <Layout>
               <Switch>
                   <Route path="/terms">

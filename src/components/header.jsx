@@ -32,6 +32,13 @@ const Header=(props)=>{
             setModalShow(false);
         }).catch(err=>console.log(err));
     }
+    const makeConnection=()=>
+    {
+        props.metaRef.current.connect().then((data)=>
+        {
+            console.log(data);
+        }).catch(err=>console.log(err));
+    }
     return(
         <nav className="position-sticky top-0 navbar navbar-expand-lg navbar-light bg-dark py-3">
             <VerticallyCenteredModal
@@ -75,8 +82,9 @@ const Header=(props)=>{
                             Claim Rewards
                         </a>
                         <button
-                            className="primary-btn-1 mx-3 d-block d-lg-inline-block">
+                            className="primary-btn-1 mx-3 d-block d-lg-inline-block" onClick={makeConnection}>
                             {isAccountLoaded?curAccount:<Loader1 width={30} height={30} stroke={'black'}/>}
+                            {/*{isConnected?curAccount:'Connect'}*/}
                         </button
                             >
                     </div>

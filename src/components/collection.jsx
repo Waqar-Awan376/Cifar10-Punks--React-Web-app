@@ -28,7 +28,7 @@ const Collection=(props)=>
         setCollection(arrayOfCollection);
         setRenderingCollection(false);
     }
-    const searchHandler= (children, func)=> {
+    const searchHandler= ()=> {
         props.metaRef.current.isValidAddress(address).then((isValid)=>
         {
             if(!isValid)
@@ -51,6 +51,13 @@ const Collection=(props)=>
             }
         }).catch(err=>console.log(err));
     }
+    const searchKeyHandler=(e)=>
+    {
+        if(e.key=== 'Enter')
+        {
+            searchHandler();
+        }
+    }
     const addressHandler=(event)=>
     {
         props.metaRef.current.isValidAddress(event.target.value).then((isValid)=>
@@ -70,7 +77,7 @@ const Collection=(props)=>
                 <h1 className="my-3">View Collection</h1>
                 <p className="mt-5">Enter your wallet ID</p>
                 <div className="mb-4">
-                    <input type='text' className={"input-field-txt " + (isValidAddress ? '':'wrong-input-field')} onChange={addressHandler}/>
+                    <input type='text' className={"input-field-txt " + (isValidAddress ? '':'wrong-input-field')} onChange={addressHandler} onKeyDown={searchKeyHandler}/>
                 </div>
                 <div className="mb-5">
                     <button type='text' className="primary-btn-1 width-120px" onClick={searchHandler}>Search</button>

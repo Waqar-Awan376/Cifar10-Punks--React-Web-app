@@ -6,8 +6,8 @@ import getWeb3 from "./getWeb3";
 class MetaMask extends Component {
     state = { web3: null, accounts: null, contract: null };
 
-    constructor() {
-        super();
+    constructor(props) {
+        super(props);
         window.metaMask = this;
     }
 
@@ -75,6 +75,10 @@ class MetaMask extends Component {
             var json = await window.metaMask.getJsonFromTokenUri(tokenIDs[i]);
             console.log("JSON " + i + ":", json);
         }
+    }
+    connect=async ()=>
+    {
+        return true;
     }
     getTokensOfAddress = async (address) => {
         // TODO: verify address input
